@@ -1,20 +1,24 @@
 .rightside-main
 {
 
-    width: 50%;
+    width: 60%;
     margin-top: 20px;
     position: relative;
     z-index: 9999;
-    margin-left: 200px;
-
    
 
 }
-.right-box{
-   
+
+.right-box
+{
+  
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+justify-content: flex-end;
+    gap: 20px;
+  
+   margin-right: 20px;
+
 }
 
 .heroBg{
@@ -25,7 +29,7 @@ right: 20px;
 }
 .image1 img{
    width: 100px;
-   /* height: 150px; */
+   
    
 }
 .image2 img{
@@ -47,6 +51,7 @@ line-height: 27px;
 z-index: 9999999;
 border-radius: 10px;
 display: flex;
+flex-wrap: nowrap;
 flex-direction: column;
 align-items: center;
 
@@ -65,10 +70,15 @@ align-items: center;
 
 
 
-@media(max-width:768px){
+@media(max-width:850px){
     .rightside-main{
         width: 100%;
 
-        margin-left: 0;
+
+       
+    }
+    .right-box{
+        justify-content:flex-start;
+
     }
 }
