@@ -1,0 +1,57 @@
+.fordelver-main{
+    width: 50%;
+    
+    
+}
+.fordelver-bike{
+    color: rgba(255, 0, 0, 0.801);
+    font-family:sans-serif;
+    margin-top: 50px;
+}
+.fordelver-bike span{
+    margin-left: 10px;
+    font-size: 22px;
+}
+.fordelever-text{
+    margin-top: 20px;
+    
+    font-size: 30px;
+}
+.fordelever-text span{
+    color: rgba(255, 0, 0, 0.863);
+}
+ .for-order button{
+    padding: 13px;
+    margin-top: 30px;
+    width: 120px;
+    background-color: rgba(255, 0, 0, 0.87);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+    border:  none;
+    outline:  none;
+    font-size: 18px;
+
+
+ }
+ .for-order button:active{
+    background-color: tomato;
+    color: black;
+    transition: 0.4s;
+    
+ }
+ 
+     .fordelver-details{
+        margin-top: 20px;
+        font-size: initial;
+        letter-spacing: 1px;
+     }
+
+
+     @media(max-width:768px){
+
+        .fordelver-main{
+            width: 100%;
+        }
+      }
+     

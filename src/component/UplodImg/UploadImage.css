@@ -1,0 +1,84 @@
+.post-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.post-main{
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 0 4px rgba( 0, 0, 0.1);
+    margin-top: 100px;
+    background-color: #eee;
+    align-items: center;
+    justify-content: center;
+    
+}
+.postProduct-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    
+    
+
+    
+
+    
+
+}
+.postProduct-title input{
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 250px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.72);
+    
+} 
+
+.select-btn{
+    display:flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+}
+.select-btn select{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+
+}
+
+.select-btn input{ 
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    width: 150px;
+  
+
+
+}
+.upload-btn button{
+    padding: 13px;
+    margin-top: 30px;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    
+
+    
+}
+
+
+.upload-btn button:active{
+    cursor: pointer;
+    transform: scale(0.9);
+
+
+
+}
