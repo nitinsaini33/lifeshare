@@ -41,6 +41,9 @@ const Rightside = () => {
     },
 
   ]
+  
+
+
 
 
   return (
@@ -61,7 +64,7 @@ const Rightside = () => {
                    <div className="details">
                     <Heading as="h3" title={item.subTitle} />
 
-                    <h3> <span>$</span> 10.5</h3>
+                    <h3> <span>$</span>{item?.price}</h3>
                    </div>
                   </div>
 

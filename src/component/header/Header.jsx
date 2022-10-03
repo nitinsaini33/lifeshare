@@ -13,25 +13,31 @@ import Model from '../Model/Model';
 import { async } from '@firebase/util';
 
 
-const Header = ({handleRemove,cartItems}) => {
-  const firebaseAuth =getAuth(app);
-  const provider = new  GoogleAuthProvider();
-
- 
-  const login=async()=>{
-    
-     const {user :{refreshToken ,providerData}}=await signInWithPopup(firebaseAuth,provider);
-
- 
-  
-  localStorage.setItem('user',JSON.stringify(providerData[0]))
-  }
+const Header = ({handleRemove,cartItems,auth}) => {
   const [show, setShow] = useState(false);
   const [active,setActive]= useState(false);
 
+  const firebaseAuth =getAuth(app);
+  // open signup popup 
+  const provider = new  GoogleAuthProvider();
+
+ 
+//  handel  login 
+  const login=async()=>{
+    
+     const {user :{providerData}}=await signInWithPopup(firebaseAuth,provider);
+
+ 
+  // save data to local storage
+  localStorage.setItem('user',JSON.stringify(providerData[0]))
+  }
+
+  // open toggle mobile menu
+ 
   const handleMenu = () => {
     setShow(!show)
   }
+  // toggle cart model
   const handleShow =()=>{
     setActive(!active)
   
@@ -39,6 +45,7 @@ const Header = ({handleRemove,cartItems}) => {
   }
 
 
+  
 
   const navdata = [
     {
@@ -74,6 +81,7 @@ const Header = ({handleRemove,cartItems}) => {
           navdata?.map((item) => {
             return (
               <>
+              {/* {auth?.displayName} */}
                 <Link className='link' to={item.path}>{item.title}</Link>
 
               </>
@@ -85,10 +93,17 @@ const Header = ({handleRemove,cartItems}) => {
 
         <div ><RiShoppingBasketFill onClick={handleShow} /></div> 
 
-       
-
+       {auth? 
+       <img className='login-img' src={auth?.photoURL}/>
+      
+       :
        <img className='login-img' src={avtar}
+
        onClick={login}/>
+       
+       }
+
+   
       
       </div>
     

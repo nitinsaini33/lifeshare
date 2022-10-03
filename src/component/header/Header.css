@@ -44,9 +44,17 @@
 
 .header-rightside {
     display: flex;
+    align-items: center;
     gap: 30px;
     margin-top: 20px;
 
+}
+.header-rightside .login-img {
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-rightside .link {

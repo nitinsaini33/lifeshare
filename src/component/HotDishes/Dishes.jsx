@@ -7,7 +7,6 @@ const Dishes = ({handleItem,product}) => {
     
   
 
-console.log(product);
   
  
 
@@ -46,30 +45,6 @@ console.log(product);
              )
             })
         }
-
-
-
-{/* <div className='dishes'>
-        
-        <div className='dishes-main'>
-            <img src={c1}/>
-            </div>
-            
-
-
-       
-        <div className='dishes-title'>
-        <div ><RiShoppingBasketLine/></div>
-            <h3 className='sub-title'>Pomegranate</h3>
-            <span className='calories'>120 Calories</span>
-            <h4 className='price'><span>$</span> 15</h4>
-        </div>
-        
-
-
-
-
-    </div> */}
 
     </div>
   

@@ -17,23 +17,29 @@ const [data,setData]=useState([])
 useEffect(()=>{
   Fetchdata();
 },[])
+
+// fetch data from firebase
 const Fetchdata =()=>{
+  // get referense from database
    const q =query(collection(db,'mydata'),orderBy ('created','desc'))
    onSnapshot (q,(QuerySnapshot)=>{
   const res=QuerySnapshot.docs.map(doc=>doc.data())
+
+  // set response to  state
   setProduct(res)
   setData(res)
   
    })
    
 }
-console.log('setprodect',product)
 
 
+
+// filter product by category
   const handelFilter=(e)=>{
-console.log(e);
+
     const fillArr=data.filter((prod)=>prod.category.toLowerCase()===e.toLowerCase())
-   console.log('hfill',fillArr);
+ 
    if(fillArr){
      setProduct(fillArr)
 

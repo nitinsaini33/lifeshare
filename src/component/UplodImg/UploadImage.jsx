@@ -20,6 +20,7 @@ const initialState={
 
     const [imgeUpload,setImgUpload]=useState(null);
     const[data,setData]=useState(initialState)
+
 const[product,setProduct]=useState([])
     const storageRef = ref(storage,`/images/${imgeUpload?.name}`);
     const uploadTask = uploadBytesResumable(storageRef, imgeUpload);
@@ -86,25 +87,19 @@ const[product,setProduct]=useState([])
     
 
   
-    useEffect(() => {
-      Fetchdata();
-    },[])
+    // useEffect(() => {
+    //   Fetchdata();
+    // },[])
 
-    const Fetchdata = ()=>{
-      const q = query(collection(db, 'mydata'), orderBy('created', 'desc'))
-      onSnapshot(q, (querySnapshot) => {
-        setProduct(querySnapshot.docs.map(doc => doc.data()))
-      }
+    // const Fetchdata = ()=>{
+    //   const q = query(collection(db, 'mydata'), orderBy('created', 'desc'))
+    //   onSnapshot(q, (querySnapshot) => {
+    //     setProduct(querySnapshot.docs.map(doc => doc.data()))
+    //   }
 
-      )}
-
-
- 
+    //   )}
 
 
-
-   
-   
   return (
     <div className='post-product'>
       <div className='post-main'>

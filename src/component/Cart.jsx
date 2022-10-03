@@ -6,12 +6,7 @@ import './Slider/Commen.css'
 
 
 const Cart = ({ cartItems, handleRemove }) => {
-
-
-
-
-
-  return (
+ return (
     <div>
       {
         cartItems?.length > 0 ? cartItems?.map((item, index) => {
@@ -26,42 +21,42 @@ const Cart = ({ cartItems, handleRemove }) => {
                   </div>
                   <div className='title-main'>
                     <div className='title-price'>
-                    <h3 className='addto-title'>{item?.title}</h3>
-                     <h3 className='addto-img'><span>$</span> {item?.price}</h3> 
-                     </div> 
+                      <h3 className='addto-title'>{item?.title}</h3>
+                      <h3 className='addto-img'><span>$</span> {item?.price}</h3>
+                    </div>
                     <button onClick={() => handleRemove(item?.title)}>REMOVE</button>
                   </div>
                 </div>
                 {
                   cartItems?.length > 0 &&
 
-                    <div className='price-details'>
-                      <div className='item'>
-                        <span> Sub Total </span>
-                        <span className='item-thnk'>Delivery </span>
+                  <div className='price-details'>
+                    <div className='item'>
+                      <span> Sub Total </span>
+                      <span className='item-thnk'>Delivery </span>
+                    </div>
+                    <div className='total-cheack'>
+                      <div className='item-total'>
+                        <span>Total</span>
                       </div>
-                      <div className='total-cheack'>
-                        <div className='item-total'>
-                          <span>Total</span>
-                        </div>
-                        <div className='item-btn'>
-                          <button>Check Out</button>
-                        </div>
+                      <div className='item-btn'>
+                        <button>Check Out</button>
                       </div>
-
                     </div>
 
+                  </div>
 
-                   
+
+
                 }
               </div>
             </>
           )
-        }):<div className='no-item'>
+        }) : <div className='no-item'>
           <h2> <span>Please</span> Add to Cart</h2>
-          
-          
-          </div>
+
+
+        </div>
       }
     </div>
   )

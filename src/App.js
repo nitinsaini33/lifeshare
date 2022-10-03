@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
 import Cart from './component/Cart';
@@ -9,15 +9,24 @@ import UploadImage from './component/UplodImg/UploadImage';
 
 function App() {
   const [cartItems,setCartItem]=useState("");
+  const [auth,setAuth]=useState('')
   const handleItem =(product)=>{
-    console.log(product);
-    setCartItem([...cartItems,product])
+   const isExist= cartItems.find((item)=>item.title===product.title)
+
+if(!isExist){
+  setCartItem([...cartItems,product])
+}else{
+  alert('Already exist.')
+}
+
+  
+  
    
   }
    const handleRemove= (title)=>{
 
     const newCartItems=cartItems.filter((item)=> item.title !==title)
-   console.log(newCartItems)
+  
     if(newCartItems){
       setCartItem(newCartItems)
      
@@ -25,10 +34,20 @@ function App() {
     
 
    }
+
+   useEffect(()=>{
+    const user=JSON.parse(localStorage.getItem('user'));
+if(user){
+  console.log(user)
+setAuth(user)
+}
+  
+
+   },[])
   return (
     <div className='app-main'>
       <BrowserRouter>
-      <Header handleRemove={handleRemove} cartItems={cartItems}/>
+      <Header handleRemove={handleRemove} cartItems={cartItems} auth={auth} />
 
       <Routes>
         <Route path='/' element={<Home handleItem={handleItem}  />}/>
