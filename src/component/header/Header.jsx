@@ -58,11 +58,7 @@ const Header = ({handleRemove,cartItems,auth}) => {
       path: '/New-Item'
 
     },
-    {
-      title: 'Con-Info',
-      path: '/Con-Info'
-
-    }
+    
 
   ]
   return (
@@ -91,7 +87,10 @@ const Header = ({handleRemove,cartItems,auth}) => {
 
 
 
-        <div ><RiShoppingBasketFill onClick={handleShow} /></div> 
+        <div  className='cart-icon'>
+          <span className='cart-logo'><RiShoppingBasketFill  onClick={handleShow} /></span>
+          <span className='cart-count'>{cartItems?.length>0?cartItems?.length:"0"}</span>
+        </div> 
 
        {auth? 
        <img className='login-img' src={auth?.photoURL}/>

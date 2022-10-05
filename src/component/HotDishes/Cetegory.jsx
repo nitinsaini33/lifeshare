@@ -17,7 +17,7 @@ const Cetegory = ({handelFilter}) => {
           return(
             <>
             <div onClick={()=>handelFilter(cat)}className='cat'>
-              <span><GiHamburger/></span>
+              <span className='filter-icon'><GiHamburger/></span>
               <p>{cat}</p>
             </div>
             </>

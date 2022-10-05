@@ -1,17 +1,20 @@
 import { useState,useEffect } from 'react';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
-import Cart from './component/Cart';
+
 import Header from './component/header/Header';
 import Home from './component/Home';
-import Model from './component/Model/Model';
+
 import UploadImage from './component/UplodImg/UploadImage';
 
 function App() {
-  const [cartItems,setCartItem]=useState("");
+  const [cartItems,setCartItem]=useState([]);
+
   const [auth,setAuth]=useState('')
   const handleItem =(product)=>{
+   
    const isExist= cartItems.find((item)=>item.title===product.title)
+
 
 if(!isExist){
   setCartItem([...cartItems,product])
@@ -34,6 +37,13 @@ if(!isExist){
     
 
    }
+   let total=0;
+   
+   cartItems?.forEach((item)=>{
+    total=total+Math.floor(item.price)
+    
+   })
+   
 
    useEffect(()=>{
     const user=JSON.parse(localStorage.getItem('user'));
